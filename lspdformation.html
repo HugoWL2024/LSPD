@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/png" href="logolspd.png" />
+    <title>LSPD</title>
+    
+    <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 100vh;
+            margin: 50px;
+            padding: 0;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+
+        iframe {
+            width: 55%;
+            height: 610px;
+            display: none; /* Cache les iframes par défaut */
+        }
+
+        .zone3 {
+            margin-bottom: 0px;
+        }
+
+        /* Ajout du flexbox pour l'alignement des logos */
+        .logo-container {
+            display: flex;
+            justify-content: center; /* Centrer les logos horizontalement */
+            align-items: center;
+            gap: 20px; /* Espacement entre les logos */
+            margin-top: 50px; /* Ajustez la valeur pour modifier la marge du haut */
+        }
+
+        .logo-container img {
+            max-width: 180px; /* Ajuste la taille des logos */
+        }
+
+        .texte5 {
+              display: flex; /* Flexbox pour aligner l'image et le texte horizontalement */
+              align-items: top ; /* Pour centrer verticalement l'image et le texte */
+              gap: 150px; /* Espace entre l'image et le texte */
+            }
+            .texte5 img {
+              max-width: 140%; /* Limite la largeur de l'image à 50% */
+              height: auto; /* Garde les proportions de l'image */
+            }
+            .texte5 h2 {
+              margin: 0; /* Enlève les marges par défaut */
+            }
+
+            .custom-textarea {
+            position: absolute;
+            top: 50px; /* Ajuste la valeur pour définir la position verticale */
+            left: 100px; /* Ajuste la valeur pour définir la position horizontale */
+            width: 300px; /* Largeur de la zone de texte */
+            height: 100px; /* Hauteur de la zone de texte */
+        }
+    </style>
+
+    <script>
+        function toggleIframe(id) {
+            var iframe = document.getElementById(id);
+            var isIframeVisible = iframe.style.display === "block";
+
+            // Masquer tous les iframes
+            document.querySelectorAll('iframe').forEach(function(iframe) {
+                iframe.style.display = "none";
+            });
+
+            // Afficher l'iframe sélectionné si ce n'est pas déjà visible
+            if (!isIframeVisible) {
+                iframe.style.display = "block";
+            }
+        }
+
+        document.addEventListener('click', function(event) {
+            // Ferme l'iframe si le clic est fait en dehors du bouton ou de l'iframe
+            var iframes = document.querySelectorAll('iframe');
+            var buttons = document.querySelectorAll('button');
+            var clickedInsideIframe = Array.from(iframes).some(function(iframe) {
+                return iframe.contains(event.target);
+            });
+            var clickedInsideButton = Array.from(buttons).some(function(button) {
+                return button.contains(event.target);
+            });
+
+            // Si le clic est en dehors d'un iframe ou d'un bouton, fermer tous les iframes
+            if (!clickedInsideIframe && !clickedInsideButton) {
+                iframes.forEach(function(iframe) {
+                    iframe.style.display = "none";
+                });
+            }
+        });
+
+
+    </script>
+</head>
+
+<body>
+    
+    <div class="topnav">
+        <a><div>
+            <img src="C:\Users\hugow\Desktop\COUR BTS\Info Helene\html2\badge-lspd.webp" width=10% height=10% >
+         </div></a>
+        <a href="C:\Users\hugow\Desktop\COUR BTS\Info Helene\html2\acceuil.html">Acceuil</a>
+        <a href="C:\Users\hugow\Desktop\COUR BTS\Info Helene\html2\lspdformation.html">Formation</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+     
+ 
+        <div class="lspdacademy">
+            <img src="policeacademy.png" alt="Logo LSPD" />
+        </div>
+        <!-- Section Formation Arme Categorie II & III -->
+        <div class="zone2">
+            <h1> Formation Arme Categorie II & III</h1>
+        </div>
+
+        <div class="zone2">
+            <button onclick="toggleIframe('iframeArme')">Formation Arme</button>
+            <iframe id="iframeArme" src="Formation.pdf"></iframe>
+        </div>
+        <hr>
+
+        <!-- Section Documentation P.P.A. -->
+        <div class="zone2">
+            <h1> Documentation P.P.A.</h1>
+        </div>
+
+        <div class="zone2">
+            <button onclick="toggleIframe('iframePPA')">Documentation PPA</button>
+            <iframe id="iframePPA" src="DocumentationP.P.A.pdf"></iframe>
+        </div>
+        <hr>
+
+        <!-- Section Formation Radio -->
+        <div class="zone2">
+            <h1> Formation Radio</h1>
+        </div>
+
+        <div class="zone2">
+            <button onclick="toggleIframe('iframeRadio')">Formation Radio</button>
+            <iframe id="iframeRadio" src="FormationRadio.pdf"></iframe>
+        </div>
+        <hr>
+
+
+
+        
+  <body>
+    <div class="logo-container">
+        <img src="logolspd.png" alt="Logo LSPD" class="logo" />
+        <img src="logoSANR.webp" alt="Logo LS" class="logo" />
+        <img src="logoLS.png" alt="Logo LS" class="logo" />
+    </div>
+
+</body>
+</html>

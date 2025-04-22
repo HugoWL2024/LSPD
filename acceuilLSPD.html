@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/png" href="logolspd.png" />
+    <title>LSPD</title>
+    
+    <style>
+        body {
+            background-image: url('backgroundlspd.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 100vh;
+            margin: 50px;
+            padding: 0;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+
+        iframe {
+            width: 55%;
+            height: 410px;
+            display: none; /* Cache les iframes par défaut */
+        }
+
+        .zone3 {
+            margin-bottom: 0px;
+        }
+
+        /* Ajout du flexbox pour l'alignement des logos */
+        .logo-container {
+            display: flex;
+            justify-content: center; /* Centrer les logos horizontalement */
+            align-items: center;
+            gap: 20px; /* Espacement entre les logos */
+        }
+
+        .logo-container img {
+            max-width: 150px; /* Ajuste la taille des logos */
+        }
+
+        .texte5 {
+              display: flex; /* Flexbox pour aligner l'image et le texte horizontalement */
+              align-items: left; /* Pour centrer verticalement l'image et le texte */
+              gap: 175px; /* Espace entre l'image et le texte */
+            }
+            .texte5 img {
+              max-width: 180%; /* Limite la largeur de l'image à 50% */
+              height: auto; /* Garde les proportions de l'image */
+            }
+            .texte5 h2 {
+              margin: 0; /* Enlève les marges par défaut */
+            }
+    </style>
+
+    <script>
+        function toggleIframe(id) {
+            var iframe = document.getElementById(id);
+            var isIframeVisible = iframe.style.display === "block";
+
+            // Masquer tous les iframes
+            document.querySelectorAll('iframe').forEach(function(iframe) {
+                iframe.style.display = "none";
+            });
+
+            // Afficher l'iframe sélectionné si ce n'est pas déjà visible
+            if (!isIframeVisible) {
+                iframe.style.display = "block";
+            }
+        }
+
+        document.addEventListener('click', function(event) {
+            // Ferme l'iframe si le clic est fait en dehors du bouton ou de l'iframe
+            var iframes = document.querySelectorAll('iframe');
+            var buttons = document.querySelectorAll('button');
+            var clickedInsideIframe = Array.from(iframes).some(function(iframe) {
+                return iframe.contains(event.target);
+            });
+            var clickedInsideButton = Array.from(buttons).some(function(button) {
+                return button.contains(event.target);
+            });
+
+            // Si le clic est en dehors d'un iframe ou d'un bouton, fermer tous les iframes
+            if (!clickedInsideIframe && !clickedInsideButton) {
+                iframes.forEach(function(iframe) {
+                    iframe.style.display = "none";
+                });
+            }
+        });
+
+
+
+    /**************************************************************************************/
+
+
+    let slideIndex = 1; // Initialise l'index de la diapositive à 1 (la première diapositive)
+showSlides(slideIndex); // Appelle la fonction showSlides pour afficher la première diapositive
+
+// Contrôles pour passer à la diapositive suivante ou précédente
+function plusSlides(n) {
+  showSlides(slideIndex += n); // Incrémente ou décrémente slideIndex de n, puis affiche la diapositive correspondante
+}
+
+// Contrôles pour afficher une diapositive spécifique, par exemple, lorsqu'un point (thumbnail) est cliqué
+function currentSlide(n) {
+  showSlides(slideIndex = n); // Définit slideIndex à n, puis affiche la diapositive correspondante
+}
+
+// Fonction principale pour afficher la diapositive actuelle
+function showSlides(n) {
+  let i; // Déclare la variable i qui servira pour les boucles
+  let slides = document.getElementsByClassName("mySlides"); // Récupère toutes les diapositives (éléments avec la classe "mySlides")
+  let dots = document.getElementsByClassName("demo"); // Récupère tous les indicateurs (éléments avec la classe "demo")
+  let captionText = document.getElementById("caption"); // Récupère l'élément qui affiche le texte de la légende
+
+  if (n > slides.length) {slideIndex = 1} // Si n dépasse le nombre total de diapositives, réinitialise slideIndex à 1
+  if (n < 1) {slideIndex = slides.length} // Si n est inférieur à 1, définis slideIndex sur la dernière diapositive
+
+  // Masque toutes les diapositives en les parcourant avec une boucle
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none"; // Cache chaque diapositive en réglant son style display à "none"
+  }
+
+  // Désactive tous les indicateurs en parcourant la liste
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", ""); // Supprime la classe "active" de chaque indicateur
+  }
+
+  slides[slideIndex-1].style.display = "block"; // Affiche la diapositive actuelle (celle correspondant à slideIndex)
+  dots[slideIndex-1].className += " active"; // Ajoute la classe "active" à l'indicateur correspondant
+  captionText.innerHTML = dots[slideIndex-1].alt; // Met à jour le texte de la légende avec l'attribut alt de l'indicateur actif
+}
+
+
+    /**************************************************************************************/
+    </script>
+</head>
+
+<body>
+    <div class="logo-container">
+        <img src="logolspd.png" alt="Logo LSPD" class="logo" />
+        <img src="logoSANR.webp" alt="Logo LS" class="logo" />
+        <img src="logoLS.png" alt="Logo LS" class="logo" />
+    </div>
+    
+    <div class="page">
+        <div class="zone1">
+            <div class="photo"></div>
+            <div class="texte">
+                 <br />  Los Santos Police Department<br />
+            </div>
+            <div class="email"></div>
+            <div class="texte3">
+                ___________________________________________________________________________________________________________ 
+           
+
+            <div class="topnav">
+              <a href="#Acceuil">Acceuil</a>
+              <a href="#Formation">Formation</a>
+              <a href="#contact">Contact</a>
+              <a href="#about" class="split">Help</a>
+            </div>
+      
+        <div class="texte4">
+            <h2><p>Bienvenue sur le site officiel du Los Santos Police Department (LSPD),
+                la premi&egrave;re ligne de d&eacute;fense et de service de la ville de Los Santos.<br></p>
+                Explorez vos opportunit&eacute;s au sein du LSPD en acc&eacute;dant &agrave; notre section de recrutement.
+                Nous encourageons les individus passionn&eacute;s par la s&eacute;curit&eacute; publique et dot&eacute;s d&rsquo;un engagement envers la justice &agrave; postuler pour rejoindre nos rangs.<br>
+                <p>Votre aventure au sein du LSPD commence ici !</p></p></h2>
+        </div>
+        
+
+
+<!-- Container for the image gallery -->
+<div class="container"> <!-- Début du conteneur de la galerie d'images -->
+
+    <!-- Full-width images with number text -->
+    <div class="mySlides"> <!-- Début de la première diapositive -->
+      <div class="numbertext">1 / 6</div> <!-- Texte indiquant le numéro de l'image -->
+        <img src="lspdgallerie1.jpg" style="width:100%"> <!-- Image en pleine largeur -->
+    </div> <!-- Fin de la première diapositive -->
+
+    <div class="mySlides"> <!-- Début de la deuxième diapositive -->
+      <div class="numbertext">2 / 6</div> <!-- Texte indiquant le numéro de l'image -->
+        <img src="lspdgallerie2.jpg" style="width:100%"> <!-- Image en pleine largeur -->
+    </div> <!-- Fin de la deuxième diapositive -->
+
+    <div class="mySlides"> <!-- Début de la troisième diapositive -->
+      <div class="numbertext">3 / 6</div> <!-- Texte indiquant le numéro de l'image -->
+        <img src="lspdgallerie3.webp" style="width:100%"> <!-- Image en pleine largeur -->
+    </div> <!-- Fin de la troisième diapositive -->
+
+    <div class="mySlides"> <!-- Début de la quatrième diapositive -->
+      <div class="numbertext">4 / 6</div> <!-- Texte indiquant le numéro de l'image -->
+        <img src="lspdgallerie4.webp" style="width:100%"> <!-- Image en pleine largeur -->
+    </div> <!-- Fin de la quatrième diapositive -->
+
+    <div class="mySlides"> <!-- Début de la cinquième diapositive -->
+      <div class="numbertext">5 / 6</div> <!-- Texte indiquant le numéro de l'image -->
+        <img src="lspdgallerie5.webp" style="width:100%"> <!-- Image en pleine largeur -->
+    </div> <!-- Fin de la cinquième diapositive -->
+
+    <div class="mySlides"> <!-- Début de la sixième diapositive -->
+      <div class="numbertext">6 / 6</div> <!-- Texte indiquant le numéro de l'image -->
+        <img src="lspdgallerie6.webp" style="width:100%"> <!-- Image en pleine largeur -->
+    </div> <!-- Fin de la sixième diapositive -->
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <!-- Bouton pour l'image précédente -->
+    <a class="next" onclick="plusSlides(1)">&#10095;</a> <!-- Bouton pour l'image suivante -->
+
+    <!-- Image text -->
+    <div class="caption-container"> <!-- Conteneur pour le texte de légende -->
+      <p id="caption"></p> <!-- Paragraphe pour afficher la légende -->
+    </div> <!-- Fin du conteneur de légende -->
+</div> <!-- Fin du conteneur de la galerie d'images -->
+
+         
+          
+        <div class="texte5">
+          <div>
+            <img src="C:\Users\hugow\Desktop\COUR BTS\Info Helene\html2\vinewood-police.webp" alt="Image LSPD">
+          </div>
+          <h2>
+            <p>
+                 
+                <p><p>TO PROTECT, TO SERVE<br></p>
+                    Votre Los Santos Police Department (LSPD) est l&rsquo;organe charge d&rsquo;assurer 
+                    la securite publique au c&#339;ur de la metropole de Los Santos. Fort de son engagement 
+                    envers la protection des citoyens et la preservation de l&rsquo;ordre, le LSPD opere a partir 
+                    de plusieurs postes repartis dans toute la ville.<br></p>
+                    
+                    <p>Le poste de police de Vespucci sert de plaque tournante pour les activites operationnelles 
+                    du departement. Niche au c&#339;ur de la ville, ce centre nevralgique abrite des professionnels 
+                    devoues et hautement qualifies, travaillant sans relache pour maintenir la paix dans les rues 
+                    animees de Los Santos.</p>
+                    
+            </p>
+          </h2>
+        </div>
+        
+        </body>
+        </html>
+
+
+
+        <!-- Footer -->
+        <div class="zone4">
+            <p>Date de cr&eacuteation : 16/10/2024</p>
+            <p>Derni&egravere mise &agrave jour le : 17/11/2024</p>
+        </div>
+    </div>
+</body>
+</html>

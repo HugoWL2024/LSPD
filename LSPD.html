@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/png" href="logolspd.png" />
+    <title>LSPD</title>
+    
+    <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 100vh;
+            margin: 50px;
+            padding: 0;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+
+        iframe {
+            width: 55%;
+            height: 410px;
+            display: none; /* Cache les iframes par défaut */
+        }
+
+        .zone3 {
+            margin-bottom: 0px;
+        }
+
+        /* Ajout du flexbox pour l'alignement des logos */
+        .logo-container {
+            display: flex;
+            justify-content: center; /* Centrer les logos horizontalement */
+            align-items: center;
+            gap: 20px; /* Espacement entre les logos */
+            margin-top: 50px; /* Ajustez la valeur pour modifier la marge du haut */
+        }
+
+        .logo-container img {
+            max-width: 180px; /* Ajuste la taille des logos */
+        }
+
+        .texte5 {
+              display: flex; /* Flexbox pour aligner l'image et le texte horizontalement */
+              align-items: top ; /* Pour centrer verticalement l'image et le texte */
+              gap: 150px; /* Espace entre l'image et le texte */
+            }
+            .texte5 img {
+              max-width: 140%; /* Limite la largeur de l'image à 50% */
+              height: auto; /* Garde les proportions de l'image */
+            }
+            .texte5 h2 {
+              margin: 0; /* Enlève les marges par défaut */
+            }
+
+            .custom-textarea {
+            position: absolute;
+            top: 50px; /* Ajuste la valeur pour définir la position verticale */
+            left: 100px; /* Ajuste la valeur pour définir la position horizontale */
+            width: 300px; /* Largeur de la zone de texte */
+            height: 100px; /* Hauteur de la zone de texte */
+        }
+    </style>
+
+    <script>
+        function toggleIframe(id) {
+            var iframe = document.getElementById(id);
+            var isIframeVisible = iframe.style.display === "block";
+
+            // Masquer tous les iframes
+            document.querySelectorAll('iframe').forEach(function(iframe) {
+                iframe.style.display = "none";
+            });
+
+            // Afficher l'iframe sélectionné si ce n'est pas déjà visible
+            if (!isIframeVisible) {
+                iframe.style.display = "block";
+            }
+        }
+
+        document.addEventListener('click', function(event) {
+            // Ferme l'iframe si le clic est fait en dehors du bouton ou de l'iframe
+            var iframes = document.querySelectorAll('iframe');
+            var buttons = document.querySelectorAll('button');
+            var clickedInsideIframe = Array.from(iframes).some(function(iframe) {
+                return iframe.contains(event.target);
+            });
+            var clickedInsideButton = Array.from(buttons).some(function(button) {
+                return button.contains(event.target);
+            });
+
+            // Si le clic est en dehors d'un iframe ou d'un bouton, fermer tous les iframes
+            if (!clickedInsideIframe && !clickedInsideButton) {
+                iframes.forEach(function(iframe) {
+                    iframe.style.display = "none";
+                });
+            }
+        });
+
+
+    </script>
+</head>
+
+<body>
+    
+    <div class="topnav">
+        <a><div>
+            <img src="C:\Users\hugow\Desktop\COUR BTS\Info Helene\html2\badge-lspd.webp" width=10% height=10% >
+         </div></a>
+        <a href="C:\Users\hugow\Desktop\COUR BTS\Info Helene\html2\Acceuil.html">Acceuil</a>
+        <a href="C:\Users\hugow\Desktop\COUR BTS\Info Helene\html2\formation.html">Formation</a>
+        <a href="#contact">Contact</a>
+        <a href="#about" class="split">Help</a>
+      </div>
+
+     
+ 
+        <div class="badgelspd">
+            <img src="bando.lspd.png" alt="Logo LSPD" />
+        </div>
+        
+            
+        
+  <div class="texte4">
+    <h2><p>Bienvenue sur le site officiel du <i>Los Santos Police Department (LSPD)</i>,
+        la premi&egrave;re ligne de d&eacute;fense et de service de la ville de Los Santos.</p>
+        Explorez vos opportunit&eacute;s au sein du LSPD en acc&eacute;dant &agrave; notre <i>section de recrutement.
+        Nous encourageons les individus passionn&eacute;s par la s&eacute;curit&eacute; publique et dot&eacute;s d&rsquo;un engagement envers la justice &agrave; postuler pour rejoindre nos rangs.
+        <p>Votre aventure au sein du LSPD commence ici !</p></p></h2>
+</div>
+
+
+
+      <div class="texte5">
+        <div>
+          <img src="C:\Users\hugow\Desktop\COUR BTS\Info Helene\html2\vinewood-police.webp" alt="Image LSPD">
+        </div>
+        <h2>
+          <p> 
+              <p><p>TO PROTECT, TO SERVE</p><br>
+
+                  Votre Los Santos Police Department (LSPD) est l&rsquo;organe charge d&rsquo;assurer 
+                  la securite publique au c&#339;ur de la metropole de Los Santos. Fort de son engagement 
+                  envers la protection des citoyens et la preservation de l&rsquo;ordre, le LSPD opere a partir 
+                  de plusieurs postes repartis dans toute la ville.</p><br>
+                  
+                  <p>Le poste de police de Vespucci sert de plaque tournante pour les activites operationnelles 
+                  du departement. Niche au c&#339;ur de la ville, ce centre nevralgique abrite des professionnels 
+                  devoues et hautement qualifies, travaillant sans relache pour maintenir la paix dans les rues 
+                  animees de Los Santos.</p>
+          </p>
+        </h2>
+      </div>
+      
+      </body>
+      </html>
+  </div>
+  <body>
+    <div class="logo-container">
+        <img src="logolspd.png" alt="Logo LSPD" class="logo" />
+        <img src="logoSANR.webp" alt="Logo LS" class="logo" />
+        <img src="logoLS.png" alt="Logo LS" class="logo" />
+    </div>
+
+</body>
+</html>
